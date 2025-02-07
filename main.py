@@ -2,8 +2,8 @@ import pygame, sys
 from pygame.locals import QUIT
 import os
 import math
-import random
 from english_words import get_english_words_set
+import secrets
 
 list_words = list(get_english_words_set(["web2"], False, True))
 
@@ -47,7 +47,7 @@ for i in range(26):
 
 #game variables
 hangman_status = 0
-word = random.choice(list_words)
+word = secrets.choice(list_words)
 word = word.upper()
 guessed = []
 run = True
@@ -177,7 +177,7 @@ while run == False:
         print("Yes")
         #reset variables
         hangman_status = 0
-        word = random.choice(list_words)
+        word = secrets.choice(list_words)
         word = word.upper()
         guessed = []
         run = True
